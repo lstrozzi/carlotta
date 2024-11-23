@@ -36,6 +36,10 @@
     <section>
         <h2>Getting Started</h2>
         <p>In this section, we will set up the development environment and write our first program.</p>
+        <label for="nameInput">Your name:</label>
+        <input type="text" id="nameInput" name="nameInput">
+        <button onclick="displayResult()">Send</button>
+        <p id="resultText"></p>
     </section>
     <section>
         <h2>Variables and Data Types</h2>
@@ -54,4 +58,12 @@
         <p>We will wrap up the tutorial and provide some final thoughts and resources for further learning.</p>
     </section>
 </body>
+
+<script>
+    function displayResult() {
+        var name = document.getElementById('nameInput').value;
+        document.getElementById('resultText').innerText = 'Hello, ' + name + '!';
+    }
+</script>
+
 </html>
