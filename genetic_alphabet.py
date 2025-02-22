@@ -1,5 +1,11 @@
+import msvcrt
+
+def get_key():
+    return msvcrt.getch().decode('utf-8')
+
 STR = "<!START>"
 STOP = "<!STOP>"
+CTRL_A = '\x01'
 
 matrix = [
     [
@@ -29,21 +35,22 @@ matrix = [
 ]
 
 reverse_matrix = {}
-for i in range(0, 3):
-    for j in range(0, 3):
-        for k in range(0, 3):
-            code = i*100 + j * 10 + k
+for i in range(0, 4):
+    for j in range(0, 4):
+        for k in range(0, 4):
+            code = (i+1)*100 + (j+1) * 10 + (k+1)
             c = matrix[i][j][k]
             reverse_matrix[c] = code
 
+print('Enter a character (CTRL-A to stop): ', end='', flush=True)
 
 char = None
-while char != STOP:
-    char = input('Enter a character: ')
+
+while char != CTRL_A:
+    char = get_key()
     if char in reverse_matrix:
-        print(f'Code for {char}: {reverse_matrix[char]:03d}')
-    else:
-        print(f'Character {char} not found in matrix.')
-    if char == STOP:
-        break
-    
+        print(f"{reverse_matrix[char]:03d} ", end="", flush=True)
+    elif char != CTRL_A:
+        print(f'\nCharacter {char} not found in matrix.')
+
+print("\nBye!")
