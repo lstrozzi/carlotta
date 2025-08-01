@@ -1,0 +1,23 @@
+/* Define color variable */
+:root {
+    --primary-color: #af8b4c;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+section {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+}
+h2 {
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px #ccc;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ciao ciao questo è il titolo del tutorial</h1>
+    </header>
+    <section>
+        <h2>Introduzione</h2>
+        <p>Benvenuto in questo tutorial di programmazione. In questa sezione, tratteremo le basi della programmazione.</p>
+    </section>
+    <section>
+        <h2>Iniziare</h2>
+        <p>In questa sezione, configureremo l'ambiente di sviluppo e scriveremo il nostro primo programma.</p>
+        <label for="nameInput">Il tuo nome:</label>
+        <input type="text" id="nameInput" name="nameInput">
+        <button onclick="displayResult()">Send</button>
+        <p id="resultText"></p>
+    </section>
+</body>
+
+<script>
+    function displayResult() {
+        var name = document.getElementById('nameInput').value;
+        document.getElementById('resultText').innerText = 'Hello, ' + name + '!';
+    }
+</script>
+
+
+</html>
