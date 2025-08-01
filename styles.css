@@ -13,17 +13,7 @@ header {
     background-color: var(--primary-color);
     color: white;
     padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.language-selector {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1em;
-    border: none;
-    margin-bottom: 0.5em;
+    text-align: center;
 }
 
 section {
