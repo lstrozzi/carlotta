@@ -8,18 +8,52 @@
 </head>
 <body>
     <header>
-        <h1>Ciao ciao questo è il titolo del tutorial</h1>
+        <div>
+            <h1 lang="en">Hello, this is the tutorial title</h1>
+            <h1 lang="de">Hallo, dies ist der Titel des Tutorials</h1>
+            <h1 lang="it">Ciao ciao questo è il titolo del tutorial</h1>
+            <h1 lang="fr">Bonjour, ceci est le titre du tutoriel</h1>
+        </div>
+        <div class="language-selector">
+            <label for="languageSelect" lang="en">Select language:</label>
+            <select id="languageSelect" name="languageSelect">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
     </header>
+
     <section>
-        <h2>Introduzione</h2>
-        <p>Benvenuto in questo tutorial di programmazione. In questa sezione, tratteremo le basi della programmazione.</p>
+        <h2 lang="en">Introduction</h2>
+        <h2 lang="de">Einführung</h2>
+        <h2 lang="it">Introduzione</h2>
+        <h2 lang="fr">Introduction</h2>
+        <p lang="en">Welcome to this programming tutorial. In this section, we will cover the basics of programming.</p>
+        <p lang="de">Willkommen zu diesem Programmier-Tutorial. In diesem Abschnitt behandeln wir die Grundlagen der Programmierung.</p>
+        <p lang="it">Benvenuto in questo tutorial di programmazione. In questa sezione, tratteremo le basi della programmazione.</p>
+        <p lang="fr">Bienvenue dans ce tutoriel de programmation. Dans cette section, nous aborderons les bases de la programmation.</p>
     </section>
+
     <section>
-        <h2>Iniziare</h2>
-        <p>In questa sezione, configureremo l'ambiente di sviluppo e scriveremo il nostro primo programma.</p>
-        <label for="nameInput">Il tuo nome:</label>
+        <h2 lang="en">Getting Started</h2>
+        <h2 lang="de">Erste Schritte</h2>
+        <h2 lang="it">Iniziare</h2>
+        <h2 lang="fr">Commencer</h2>
+        <p lang="en">In this section, we will set up the development environment and write our first program.</p>
+        <p lang="de">In diesem Abschnitt richten wir die Entwicklungsumgebung ein und schreiben unser erstes Programm.</p>
+        <p lang="it">In questa sezione, configureremo l'ambiente di sviluppo e scriveremo il nostro primo programma.</p>
+        <p lang="fr">Dans cette section, nous allons configurer l'environnement de développement et écrire notre premier programme.</p>
+        <label for="nameInput" lang="en">Your name:</label>
+        <label for="nameInput" lang="de">Dein Name:</label>
+        <label for="nameInput" lang="it">Il tuo nome:</label>
+        <label for="nameInput" lang="fr">Votre nom :</label>
         <input type="text" id="nameInput" name="nameInput">
-        <button onclick="displayResult()">Send</button>
+        <button onclick="displayResult()" lang="en">Send</button>
+        <button onclick="displayResult()" lang="de">Senden</button>
+        <button onclick="displayResult()" lang="it">Invia</button>
+        <button onclick="displayResult()" lang="fr">Envoyer</button>
         <p id="resultText"></p>
     </section>
 </body>
@@ -30,6 +64,5 @@
         document.getElementById('resultText').innerText = 'Hello, ' + name + '!';
     }
 </script>
-
 
 </html>
