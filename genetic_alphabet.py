@@ -1,7 +1,4 @@
-import msvcrt
-
-def get_key():
-    return msvcrt.getch().decode('utf-8')
+import sys
 
 STR = "<!START>"
 STOP = "<!STOP>"
@@ -42,15 +39,24 @@ for i in range(0, 4):
             c = matrix[i][j][k]
             reverse_matrix[c] = code
 
-print('Enter a character (CTRL-A to stop): ', end='', flush=True)
+def get_key():
+    # Use msvcrt on Windows, input() elsewhere
+    if sys.platform == "win32":
+        import msvcrt
+        return msvcrt.getch().decode('utf-8')
+    else:
+        # Prompt for a single character
+        return input("Enter a character (CTRL-A to stop): ")[0]
 
 char = None
 
 while char != CTRL_A:
     char = get_key()
+    if char == CTRL_A:
+        break
     if char in reverse_matrix:
         print(f"{reverse_matrix[char]:03d} ", end="", flush=True)
-    elif char != CTRL_A:
+    else:
         print(f'\nCharacter {char} not found in matrix.')
 
 print("\nBye!")
